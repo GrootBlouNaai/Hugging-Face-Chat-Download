@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hugging Face Chat Download
 // @namespace    Violentmonkey Script
-// @version      1.0
+// @version      1.3
 // @description  Adds buttons to download JSON and Markdown
 // @author       Huggingchat Export
 // @match        https://huggingface.co/chat/conversation/*
