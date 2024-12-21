@@ -5,6 +5,7 @@
 // @description  Adds buttons to download JSON and Markdown
 // @author       Huggingchat Export
 // @match        https://huggingface.co/chat/conversation/*
+// @license      GPL v2
 // @grant        none
 // ==/UserScript==
 
