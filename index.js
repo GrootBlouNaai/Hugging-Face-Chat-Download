@@ -62,7 +62,6 @@
             .then(data => {
                 console.log('Fetched JSON data:', data);
                 const title = extractTitle(data);
-                // const sanitizedTitle = title.replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 50);
                 const sanitizedTitle = title; // Filename sanitization commented out
                 console.log('Extracted title:', sanitizedTitle);
 
@@ -155,6 +154,18 @@
     }
 
     /**
+     * Formats text content with blockquote
+     * @param {string} content - Content to format
+     * @returns {string} Formatted content with blockquotes
+     */
+    function formatWithBlockquote(content) {
+        // Split content by newlines and add blockquote to each line
+        const lines = content.split('\n');
+        const quotedLines = lines.map(line => line ? `> ${line}` : '>');
+        return quotedLines.join('\n');
+    }
+
+    /**
      * Extracts conversation from data structure
      * @param {Object} data - JSON data object
      * @returns {Array} Array of conversation strings
@@ -190,9 +201,10 @@
                         if (role && content &&
                             ['user', 'assistant'].includes(role) &&
                             typeof content === 'string') {
+                            const formattedContent = formatWithBlockquote(content);
                             conversation.push(
                                 `### **${role.charAt(0).toUpperCase() +
-                                role.slice(1)}**: \n${content}\n\n`
+                                role.slice(1)}**: \n${formattedContent}\n\n`
                             );
                         }
                     }
