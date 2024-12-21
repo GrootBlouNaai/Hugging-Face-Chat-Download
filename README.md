@@ -1,2 +1,2 @@
 # Hugging-Face-Chat-Download
-Download from hugging chat
+Userscript to download from hugging chat in json for backing up locally.
