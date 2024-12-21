@@ -62,6 +62,7 @@
             .then(data => {
                 console.log('Fetched JSON data:', data);
                 const title = extractTitle(data);
+                // const sanitizedTitle = title.replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 50);
                 const sanitizedTitle = title; // Filename sanitization commented out
                 console.log('Extracted title:', sanitizedTitle);
 
